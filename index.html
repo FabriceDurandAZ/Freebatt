@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freebatt Cross - AZ Energy</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#F2C300">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-dot" aria-hidden="true"></div>
+      <div>
+        <div class="title">Freebatt Cross</div>
+        <div class="subtitle">Équivalence Freebatt First + caractéristiques</div>
+      </div>
+    </div>
+    <div class="badge">AZ Energy</div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Recherche</h1>
+      <p class="muted">Choisis la marque, puis cherche la référence (filtre instantané).</p>
+
+      <div class="grid">
+        <label class="field">
+          <span>Marque</span>
+          <select id="brandSelect"></select>
+        </label>
+
+        <div class="field">
+          <span>Référence (recherche)</span>
+          <input id="refSearch" type="text" placeholder="Tape pour filtrer… ex: A7, 103, AGM70" autocomplete="off"/>
+          <div class="hint">Puis sélectionne dans la liste</div>
+          <select id="refSelect"></select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="resetBtn" class="ghost" type="button">Réinitialiser</button>
+        <button id="copyBtn" class="primary" type="button" disabled>Copier le résultat</button>
+      </div>
+    </section>
+
+    <section class="card" id="resultCard" hidden>
+      <h2>Résultat</h2>
+      <div class="result">
+        <div class="result-line">
+          <span class="pill" id="sourcePill"></span>
+          <span class="arrow">→</span>
+          <span class="pill strong" id="freebattPill"></span>
+        </div>
+        <div class="specs" id="specs"></div>
+        <div class="foot muted" id="footnote"></div>
+      </div>
+    </section>
+
+    <section class="card small muted">
+      <div>Astuce : sur mobile, tu peux “installer” l’app depuis le navigateur (Ajouter à l’écran d’accueil).</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
